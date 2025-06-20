@@ -54,7 +54,7 @@ class OFR_Data():
         
         
         #NOT REAL CODE; update equations with real code
-    def calc_OHR_ext(self,voc):
+    def calc_OHR_ext(self,voc,conc):
         
         if voc == 'toluene':
             rate_constant = 1
