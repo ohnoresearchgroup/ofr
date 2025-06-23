@@ -15,7 +15,7 @@ class OFR_Data():
         self.df = pd.read_csv(path, delimiter = "\t")
         
         #convert to datetime
-        self.df['dat'] = pd.to_datetime(self.df['dat'])
+        #self.df['dat'] = pd.to_datetime(self.df['dat'])
         
         #flags for what has been calculated yet
         self.calculated_UV = False
@@ -29,7 +29,7 @@ class OFR_Data():
         c = 3.0e8      # m/s
         wl_m = 254e-9  # m
         photon_energy = h * c / wl_m  # J/photon
-        power_W_cm2 = self.df['UV'] * 1e-6  # μW/cm² → W/cm²
+        power_W_cm2 = self.df['Irradiance'] * 1e-6  # μW/cm² → W/cm²
         self.df['UV_photons'] = power_W_cm2 / photon_energy  # photons/cm²/s
         
         #flag as UV converted
